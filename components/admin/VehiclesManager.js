@@ -12,7 +12,7 @@ function VehiclesManager() {
   const loadVehicles = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/vehicles');
+      const res = await fetch('https://shrayatours.onrender.com/api/vehicles');
       if (!res.ok) throw new Error('Failed to load vehicles');
       const data = await res.json();
       setVehicles(data);
@@ -29,13 +29,13 @@ function VehiclesManager() {
     try {
       let res;
       if (editingId) {
-        res = await fetch(`/api/vehicles/${editingId}`, {
+        res = await fetch(`https://shrayatours.onrender.com/api/vehicles/${editingId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
       } else {
-        res = await fetch('/api/vehicles', {
+        res = await fetch('https://shrayatours.onrender.com/api/vehicles', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -61,7 +61,7 @@ function VehiclesManager() {
   const deleteVehicle = async (id) => {
     if (!confirm('Delete this vehicle?')) return;
     try {
-      const res = await fetch(`/api/vehicles/${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://shrayatours.onrender.com/api/vehicles/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed to delete vehicle');
       await loadVehicles();
     } catch (error) {
