@@ -5,7 +5,7 @@ function Destinations() {
     let mounted = true;
     (async function load() {
       try {
-        const res = await fetch('/api/destinations');
+        const res = await fetch('https://shrayatours.onrender.com/api/destinations');
         if (!res.ok) throw new Error('Failed to load destinations: ' + res.status);
         const json = await res.json();
         if (!mounted) return;
