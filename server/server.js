@@ -13,7 +13,13 @@ const Admin = require('./models/Admin');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://demooo12.netlify.app',
+    'http://localhost:3000'
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Serve static files from the root directory
