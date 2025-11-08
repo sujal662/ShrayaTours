@@ -5,7 +5,7 @@ function ContactsList() {
   const loadContacts = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/contacts');
+      const response = await fetch('https://shrayatours.onrender.com/api/contacts');
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
       setContacts(data);
@@ -20,7 +20,7 @@ function ContactsList() {
   const deleteContact = async (id) => {
     if (!confirm('Are you sure you want to delete this contact?')) return;
     try {
-      const response = await fetch(`/api/contacts/${id}`, { method: 'DELETE' });
+      const response = await fetch(`https://shrayatours.onrender.com/api/contacts/${id}`, { method: 'DELETE' });
       if (!response.ok) throw new Error('Failed to delete');
       loadContacts();
     } catch (error) {
