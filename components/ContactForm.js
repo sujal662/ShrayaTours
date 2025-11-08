@@ -57,7 +57,7 @@ function ContactForm() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('/api/contacts', {
+      const response = await fetch('https://shrayatours.onrender.com/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
