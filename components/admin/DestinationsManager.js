@@ -12,7 +12,7 @@ function DestinationsManager() {
   const loadDestinations = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/destinations');
+      const res = await fetch('https://shrayatours.onrender.com/api/destinations');
       if (!res.ok) throw new Error('Failed to load destinations');
       const data = await res.json();
       setDestinations(data);
@@ -29,13 +29,13 @@ function DestinationsManager() {
     try {
       let res;
       if (editingId) {
-        res = await fetch(`/api/destinations/${editingId}`, {
+        res = await fetch(`https://shrayatours.onrender.com/api/destinations/${editingId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
       } else {
-        res = await fetch('/api/destinations', {
+        res = await fetch('https://shrayatours.onrender.com/api/destinations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -61,7 +61,7 @@ function DestinationsManager() {
   const deleteDestination = async (id) => {
     if (!confirm('Delete this destination?')) return;
     try {
-      const res = await fetch(`/api/destinations/${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://shrayatours.onrender.com/api/destinations/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed to delete destination');
       await loadDestinations();
     } catch (error) {
