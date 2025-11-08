@@ -5,7 +5,7 @@ function Vehicles() {
     let mounted = true;
     (async function load() {
       try {
-        const res = await fetch('/api/vehicles');
+        const res = await fetch('https://shrayatours.onrender.com/api/vehicles');
         if (!res.ok) throw new Error('Failed to load vehicles: ' + res.status);
         const json = await res.json();
         if (!mounted) return;
