@@ -15,7 +15,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'https://demooo12.netlify.app',
+    'https://shreyatours.in',
     'http://localhost:3000'
   ],
   credentials: true,
