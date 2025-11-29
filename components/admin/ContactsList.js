@@ -51,6 +51,7 @@ function ContactsList() {
                 <td>{contact.name}</td>
                 <td>{contact.phone}</td>
                 <td>{contact.email}</td>
+                <td>{contact.address}</td>
                 <td className="max-w-xs truncate">{contact.reason}</td>
                 <td>{new Date(contact.createdAt).toLocaleDateString()}</td>
                 <td>
