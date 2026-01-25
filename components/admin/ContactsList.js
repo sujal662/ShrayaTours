@@ -42,7 +42,7 @@ function ContactsList() {
         <table className="w-full">
           <thead>
             <tr className="bg-gray-100">
-              <th>Name</th><th>Phone</th><th>Email</th><th>Message</th><th>Date</th><th>Actions</th>
+              <th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>Message</th><th>Date</th><th>Actions</th>
             </tr>
           </thead>
           <tbody>
